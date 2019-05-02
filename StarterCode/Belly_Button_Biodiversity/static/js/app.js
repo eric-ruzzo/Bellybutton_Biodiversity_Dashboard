@@ -3,7 +3,7 @@ function buildMetadata(sample) {
   // @TODO: Complete the following function that builds the metadata panel
 
   // Use `d3.json` to fetch the metadata for a sample
-  var url = "/metadata/<sample>";
+  var url = "/metadata/sample_metadata.json";
   d3.json(url).then(function(response) {
     console.log(response);
 
@@ -11,7 +11,7 @@ function buildMetadata(sample) {
     var sample = d3.select("#sample-metadata");
 
     // Use `.html("") to clear any existing metadata
-    d3.html("");
+    sample.html("");
 
     // Use `Object.entries` to add each key and value pair to the panel
     // Hint: Inside the loop, you will need to use d3 to append new
@@ -25,7 +25,7 @@ function buildMetadata(sample) {
 function buildCharts(sample) {
 
   // @TODO: Use `d3.json` to fetch the sample data for the plots
-  var url = "/samples/<sample>";
+  var url = "/samples/data.json";
   d3.json(url).then(function(response) {
 
     // @TODO: Build a Bubble Chart using the sample data
